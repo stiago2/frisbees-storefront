@@ -15,8 +15,8 @@
   }
 
   &__frisbees {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: $triple-step;
-    flex-wrap: wrap;
   }
 }

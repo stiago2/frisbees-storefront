@@ -4,6 +4,7 @@
   border: 1px solid $border-color;
   border-radius: $half-step;
   padding: $triple-step;
+
   display: flex;
   flex-direction: column;
   gap: $step;
@@ -18,6 +19,8 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    gap: $half-step;
+    flex-direction: column;
 
     &-title {
       font-weight: bold;
@@ -26,7 +29,10 @@
 
     &-raiting {
       display: flex;
+
       gap: $half-step;
+
+
       .pi-star-fill {
         color: goldenrod;
       }
@@ -35,14 +41,24 @@
 
 
   &__description {
-    max-width: 250px;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: $typography-size-body2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   &__image {
-    height: 150px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .frisbee-container {
+    &__header {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
   }
 }
