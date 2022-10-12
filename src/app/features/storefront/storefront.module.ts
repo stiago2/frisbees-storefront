@@ -10,6 +10,7 @@ import { ChipModule } from 'primeng/chip';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { TagModule } from 'primeng/tag';
+import { MissingImageDirective } from './directives/broken-image.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TagModule } from 'primeng/tag';
     FrisbeeListComponent,
     FrisbeeComponent,
     FrisbeeDetailsComponent,
+    MissingImageDirective,
   ],
   imports: [
     CommonModule,

@@ -14,7 +14,7 @@
 
       <div class="frisbee-container__body-image">
         <p-tag styleClass="mr-2" severity="success" value="Category: {{ frisbee.category | titlecase }}"></p-tag>
-        <img [src]="frisbee.image">
+        <img [src]="frisbee.image" missingImage>
       </div>
 
       <div class="frisbee-container__body-details">
