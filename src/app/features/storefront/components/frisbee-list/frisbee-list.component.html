@@ -1,0 +1,11 @@
+<ng-container *ngFor="let groupedFrisbees of frisbees | keyvalue">
+  <div class="container">
+    <h2 class="container__title">{{ groupedFrisbees.key | uppercase }}</h2>
+    <div class="container__frisbees">
+      <ng-container *ngFor="let frisbee of groupedFrisbees.value">
+        <app-frisbee [frisbee]="frisbee" (click)="onClick(frisbee.id)"></app-frisbee>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+

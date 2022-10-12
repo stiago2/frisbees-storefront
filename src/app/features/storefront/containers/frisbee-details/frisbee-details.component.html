@@ -1,0 +1,51 @@
+<ng-container *ngIf="frisbee$ | async as frisbee">
+
+  <div class="frisbee-container">
+    <div class="frisbee-container__header">
+      <h1>{{ frisbee.name }}</h1>
+      <div class="frisbee-container__header-raiting">
+        <ng-container *ngFor="let item of [].constructor(frisbee.rating)">
+          <i class="pi pi-star-fill"></i>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="frisbee-container__body">
+
+      <div class="frisbee-container__body-image">
+        <p-tag styleClass="mr-2" severity="success" value="Category: {{ frisbee.category | titlecase }}"></p-tag>
+        <img [src]="frisbee.image">
+      </div>
+
+      <div class="frisbee-container__body-details">
+        <div class="description-container">
+          <span>Description:</span>
+          <div class="description">{{ frisbee.description }}</div>
+        </div>
+
+        <div class="additional-information">
+          <span>Additional Information:</span>
+          <div>
+            <p-chip label="Speed: {{ frisbee.speed }}"></p-chip>
+            <p-chip label="Glide: {{ frisbee.glide }}"></p-chip>
+            <p-chip label="Turn: {{ frisbee.turn }}"></p-chip>
+            <p-chip label="Fade: {{ frisbee.fade }}"></p-chip>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frisbee-container__footer">
+      <div class="frisbee-container__footer-pricing">
+        <span>Price: {{ frisbee.price | currency }}</span>
+      </div>
+      <div class="frisbee-container__footer-actions">
+        <button pButton type="button" icon="pi pi-arrow-left" iconPos="left" label="Go Back" (click)="goBack()"></button>
+        <button pButton class="p-button-success" type="button" icon="pi pi-shopping-cart" iconPos="right" label="Add to Cart" (click)="addToCart(frisbee)"></button>
+      </div>
+    </div>
+  </div>
+
+</ng-container>
+
+<p-toast key="toast-message" position="top-center"></p-toast>

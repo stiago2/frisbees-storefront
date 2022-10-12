@@ -1,0 +1,22 @@
+@import 'variables.scss';
+
+.container {
+  border: 1px solid $border-color;
+  border-radius: $half-step;
+  padding: $triple-step;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-bottom: $double-step;
+
+
+  &__title {
+    margin: 0 0 $double-step;
+    border-bottom: 1px solid $border-color;
+    padding: $double-step;
+  }
+
+  &__frisbees {
+    display: flex;
+    gap: $triple-step;
+    flex-wrap: wrap;
+  }
+}
